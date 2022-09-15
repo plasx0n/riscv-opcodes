@@ -1,0 +1,13 @@
+
+#LDPC
+ld_sign     rd rs1 rs2 31..25=0  14..12=0 6..0=0x0b
+ld_abs      rd rs1 rs2 31..25=0  14..12=1 6..0=0x0b
+ld_max      rd rs1 rs2 31..25=0  14..12=2 6..0=0x0b
+ld_min      rd rs1 rs2 31..25=0  14..12=3 6..0=0x0b
+ld_nmess    rd rs1 rs2 31..25=0  14..12=4 6..0=0x0b
+ld_subsat   rd rs1 rs2 31..25=0  14..12=5 6..0=0x0b
+ld_eval     rd rs1 rs2 31..25=1  14..12=0 6..0=0x0b
+ld_rsign    rd rs1 rs2 31..25=1  14..12=1 6..0=0x0b
+ld_addsat   rd rs1 rs2 31..25=1  14..12=2 6..0=0x0b
+
+
