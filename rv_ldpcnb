@@ -1,0 +1,20 @@
+# 1 instru => 1 fonctionalitée ? ou merge des instrus/type de vectorisation SIMD
+#sign|max|sign ect .. ( cf tab des intrus)
+#ect.. 
+#
+#LDPC SCALAR/INTER
+
+
+ldn.add32u_sat64        rd rs1 rs2 31..25=0  14..12=0 6..0=0x7b
+ldn.vidxminupdate2      rd rs1 rs2 31..25=0  14..12=1 6..0=0x7b
+ldn.min                 rd rs1 rs2 31..25=0  14..12=2 6..0=0x7b
+ldn.sat8                rd rs1 rs2 31..25=0  14..12=3 6..0=0x7b
+ldn.add32s_sat64        rd rs1 rs2 31..25=0  14..12=4 6..0=0x7b
+ldn.sub32s_sat64        rd rs1 rs2 31..25=0  14..12=5 6..0=0x7b 
+ldn.vidxmincomp         rd rs1 rs2 31..25=0  14..12=6 6..0=0x7b
+ldn.vidxminupdate       rd rs1 rs2 31..25=0  14..12=7 6..0=0x7b
+
+# 3Regs
+ldn.maxsub              rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x7b
+ldn.copyxorvecto        rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x7b
+ldn.readVn              rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x7b

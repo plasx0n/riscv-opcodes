@@ -434,44 +434,65 @@ def make_latex_table():
     # in list_of_extensions need to be dumped. If not empty, then only the
     # instructions listed in list_of_instructions will be dumped into latex.
     caption = ''
-    type_list = ['R-type','I-type','S-type','B-type','U-type','J-type']
-    dataset_list = [(['_i','32_i'], 'RV32I Base Instruction Set', [], False)]
-    dataset_list.append((['_i'], '', ['fence_tso','pause'], True))
+    # type_list = ['R-type','I-type','S-type','B-type','U-type','J-type']
+    # dataset_list = [(['_i','32_i'], 'RV32I Base Instruction Set', [], False)]
+    # dataset_list.append((['_i'], '', ['fence_tso','pause'], True))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+
+    type_list = ['R-type','R4-type']
+    dataset_list = [(['_ldpc'], 'LDPC', [], False)]
+    # dataset_list.append((['_custom'], '', [], True))
     make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    type_list = ['R-type','I-type','S-type']
-    dataset_list = [(['64_i'], 'RV64I Base Instruction Set (in addition to RV32I)', [], False)]
-    dataset_list.append((['_zifencei'], 'RV32/RV64 Zifencei Standard Extension', [], False))
-    dataset_list.append((['_zicsr'], 'RV32/RV64 Zicsr Standard Extension', [], False))
-    dataset_list.append((['_m','32_m'], 'RV32M Standard Extension', [], False))
-    dataset_list.append((['64_m'],'RV64M Standard Extension (in addition to RV32M)', [], False))
+    type_list = ['R-type','R4-type']
+    dataset_list = [(['_polar'], 'POLAR', [], False)]
+    # dataset_list.append((['_custom'], '', [], True))
     make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    type_list = ['R-type']
-    dataset_list = [(['_a'],'RV32A Standard Extension', [], False)]
-    dataset_list.append((['64_a'],'RV64A Standard Extension (in addition to RV32A)', [], False))
+    type_list = ['R-type','R4-type']
+    dataset_list = [(['_ldpcnb'], 'LDPCNB', [], False)]
+    # dataset_list.append((['_custom'], '', [], True))
     make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    type_list = ['R-type','R4-type','I-type','S-type']
-    dataset_list = [(['_f'],'RV32F Standard Extension', [], False)]
-    dataset_list.append((['64_f'],'RV64F Standard Extension (in addition to RV32F)', [], False))
+    type_list = ['R-type','R4-type']
+    dataset_list = [(['_turbo'], 'TURBO', [], False)]
+    # dataset_list.append((['_custom'], '', [], True))
     make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    type_list = ['R-type','R4-type','I-type','S-type']
-    dataset_list = [(['_d'],'RV32D Standard Extension', [], False)]
-    dataset_list.append((['64_d'],'RV64D Standard Extension (in addition to RV32D)', [], False))
-    make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    type_list = ['R-type','R4-type','I-type','S-type']
-    dataset_list = [(['_q'],'RV32Q Standard Extension', [], False)]
-    dataset_list.append((['64_q'],'RV64Q Standard Extension (in addition to RV32Q)', [], False))
-    make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+    # type_list = ['R-type','I-type','S-type']
+    # dataset_list = [(['64_i'], 'RV64I Base Instruction Set (in addition to RV32I)', [], False)]
+    # dataset_list.append((['_zifencei'], 'RV32/RV64 Zifencei Standard Extension', [], False))
+    # dataset_list.append((['_zicsr'], 'RV32/RV64 Zicsr Standard Extension', [], False))
+    # dataset_list.append((['_m','32_m'], 'RV32M Standard Extension', [], False))
+    # dataset_list.append((['64_m'],'RV64M Standard Extension (in addition to RV32M)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
-    caption = '\\caption{Instruction listing for RISC-V}'
-    type_list = ['R-type','R4-type','I-type','S-type']
-    dataset_list = [(['_zfh', '_d_zfh','_q_zfh'],'RV32Zfh Standard Extension', [], False)]
-    dataset_list.append((['64_zfh'],'RV64Zfh Standard Extension (in addition to RV32Zfh)', [], False))
-    make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+    # type_list = ['R-type']
+    # dataset_list = [(['_a'],'RV32A Standard Extension', [], False)]
+    # dataset_list.append((['64_a'],'RV64A Standard Extension (in addition to RV32A)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+
+    # type_list = ['R-type','R4-type','I-type','S-type']
+    # dataset_list = [(['_f'],'RV32F Standard Extension', [], False)]
+    # dataset_list.append((['64_f'],'RV64F Standard Extension (in addition to RV32F)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+
+    # type_list = ['R-type','R4-type','I-type','S-type']
+    # dataset_list = [(['_d'],'RV32D Standard Extension', [], False)]
+    # dataset_list.append((['64_d'],'RV64D Standard Extension (in addition to RV32D)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+
+    # type_list = ['R-type','R4-type','I-type','S-type']
+    # dataset_list = [(['_q'],'RV32Q Standard Extension', [], False)]
+    # dataset_list.append((['64_q'],'RV64Q Standard Extension (in addition to RV32Q)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
+
+    # caption = '\\caption{Instruction listing for RISC-V}'
+    # type_list = ['R-type','R4-type','I-type','S-type']
+    # dataset_list = [(['_zfh', '_d_zfh','_q_zfh'],'RV32Zfh Standard Extension', [], False)]
+    # dataset_list.append((['64_zfh'],'RV64Zfh Standard Extension (in addition to RV32Zfh)', [], False))
+    # make_ext_latex_table(type_list, dataset_list, latex_file, 32, caption)
 
     ## The following is demo to show that Compressed instructions can also be
     # dumped in the same manner as above
