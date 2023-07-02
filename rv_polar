@@ -2,7 +2,7 @@
 #SC_2R
 pl.f                rd rs1 rs2 31..25=0  14..12=0 6..0=0x2b
 pl.r                rd rs1 rs2 31..25=0  14..12=1 6..0=0x2b
-pl.add.sat           rd rs1 rs2 31..25=0  14..12=2 6..0=0x2b
+pl.addsat           rd rs1 rs2 31..25=0  14..12=2 6..0=0x2b
 pl.subsat           rd rs1 rs2 31..25=0  14..12=3 6..0=0x2b
 pl.decode           rd rs1 rs2 31..25=0  14..12=4 6..0=0x2b
 pl.eval             rd rs1 rs2 31..25=0  14..12=5 6..0=0x2b
@@ -25,8 +25,8 @@ pl.spc_minapos      rd rs1 rs2 31..25=1  14..12=7 6..0=0x2b
 
 # 3Regs INTER/SCALAIRE
 pl3.g                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x2b
-pl3.vidx_min_comp    rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x2b
-pl3.vsc_update       rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x2b
+pl3.idx_min_comp    rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x2b
+pl3.sc_update       rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x2b
 
 # 3 regs intra 
 pl3.findminpos       rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x2b
