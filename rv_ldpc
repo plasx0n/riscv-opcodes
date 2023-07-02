@@ -18,14 +18,14 @@ ld_storeu               rd rs1 rs2 31..25=0  14..12=6 6..0=0x0b
 ld_xorb                 rd rs1 rs2 31..25=0  14..12=7 6..0=0x0b
 
 # 3Regs INTER/SCALAIRE
-ld_sign3                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x0b
-ld_minmax               rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x0b
-ld_Rsing_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
-ld_min_sorting          rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x0b
+ld3_sign3                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x0b
+ld3_minmax               rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x0b
+ld3_Rsing_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
+ld3_min_sorting          rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x0b
 
 # 3Regs INTRA
-ld_maxsub               rd rs1 rs2 rs3 26..25=3 14..12=4 6..0=0x0b
-ld_copyxorvecto         rd rs1 rs2 rs3 26..25=3 14..12=5 6..0=0x0b
-ld_readvn               rd rs1 rs2 rs3 26..25=3 14..12=6 6..0=0x0b
+ld3_maxsub               rd rs1 rs2 rs3 26..25=3 14..12=4 6..0=0x0b
+ld3_copyxorvecto         rd rs1 rs2 rs3 26..25=3 14..12=5 6..0=0x0b
+ld3_readvn               rd rs1 rs2 rs3 26..25=3 14..12=6 6..0=0x0b
 
 
