@@ -3,29 +3,29 @@
 #ect.. 
 #
 #LDPC SCALAR/INTER
-ld_sign                 rd rs1 rs2 31..25=0  14..12=0 6..0=0x0b
-ld_abs                  rd rs1 rs2 31..25=0  14..12=1 6..0=0x0b
-ld_max                  rd rs1 rs2 31..25=0  14..12=2 6..0=0x0b
-ld_min                  rd rs1 rs2 31..25=0  14..12=3 6..0=0x0b
-ld_nmess                rd rs1 rs2 31..25=0  14..12=4 6..0=0x0b
-ld_subsat               rd rs1 rs2 31..25=0  14..12=5 6..0=0x0b
-ld_eval                 rd rs1 rs2 31..25=1  14..12=0 6..0=0x0b
-ld_rsign                rd rs1 rs2 31..25=1  14..12=1 6..0=0x0b
-ld_addsat               rd rs1 rs2 31..25=1  14..12=2 6..0=0x0b
+ld.sign                 rd rs1 rs2 31..25=0  14..12=0 6..0=0x0b
+ld.abs                  rd rs1 rs2 31..25=0  14..12=1 6..0=0x0b
+ld.max                  rd rs1 rs2 31..25=0  14..12=2 6..0=0x0b
+ld.min                  rd rs1 rs2 31..25=0  14..12=3 6..0=0x0b
+ld.nmess                rd rs1 rs2 31..25=0  14..12=4 6..0=0x0b
+ld.subsat               rd rs1 rs2 31..25=0  14..12=5 6..0=0x0b
+ld.eval                 rd rs1 rs2 31..25=1  14..12=0 6..0=0x0b
+ld.rsign                rd rs1 rs2 31..25=1  14..12=1 6..0=0x0b
+ld.addsat               rd rs1 rs2 31..25=1  14..12=2 6..0=0x0b
 
 #INTRA
-ld_storeu               rd rs1 rs2 31..25=0  14..12=6 6..0=0x0b
-ld_xorb                 rd rs1 rs2 31..25=0  14..12=7 6..0=0x0b
+ld.storeu               rd rs1 rs2 31..25=0  14..12=6 6..0=0x0b
+ld.xorb                 rd rs1 rs2 31..25=0  14..12=7 6..0=0x0b
 
 # 3Regs INTER/SCALAIRE
-ld3_sign3                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x0b
-ld3_minmax               rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x0b
-ld3_Rsing_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
-ld3_min_sorting          rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x0b
+ld3.sign3                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x0b
+ld3.minmax               rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x0b
+ld3.Rsing_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
+ld3.min_sorting          rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x0b
 
 # 3Regs INTRA
-ld3_maxsub               rd rs1 rs2 rs3 26..25=3 14..12=4 6..0=0x0b
-ld3_copyxorvecto         rd rs1 rs2 rs3 26..25=3 14..12=5 6..0=0x0b
-ld3_readvn               rd rs1 rs2 rs3 26..25=3 14..12=6 6..0=0x0b
+ld3.maxsub               rd rs1 rs2 rs3 26..25=3 14..12=4 6..0=0x0b
+ld3.copyxorvecto         rd rs1 rs2 rs3 26..25=3 14..12=5 6..0=0x0b
+ld3.readvn               rd rs1 rs2 rs3 26..25=3 14..12=6 6..0=0x0b
 
 

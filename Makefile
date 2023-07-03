@@ -15,6 +15,14 @@ everything:
 encoding.out.h:
 	@./parse.py -c $(EXTENSIONS)
 
+.PHONY : custom
+custom:
+	@./parse.py -custom $(EXTENSIONS)
+ 
+.PHONY : custom_full
+custom_full:
+	@./parse.py -custom 'rv_polar' 'rv_ldpc' 'rv_ldpcnb' 'rv_turbo'
+
 .PHONY : inst.chisel
 inst.chisel:
 	@./parse.py -chisel $(EXTENSIONS)
@@ -37,7 +45,7 @@ inst.rs:
 
 .PHONY : clean
 clean:
-	rm -f inst* priv-instr-table.tex encoding.out.h
+	rm -f inst* priv-instr-table.tex encoding.out.h riscv-opc.out.c
 
 .PHONY : install
 install: everything
