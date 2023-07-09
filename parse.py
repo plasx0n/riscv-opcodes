@@ -849,24 +849,41 @@ def make_c_custom(instr_dict):
     reg_files_r4_str = '"d,s,t,r"'
 
     declare_insn_dir = ''
+    spike_declare = ''
+    spike_make = ''
 
     for i in instr_dict:
         mask_match_str += f'#define MATCH_{i.upper().replace(".","_")} {instr_dict[i]["match"]}\n'
         mask_match_str += f'#define MASK_{i.upper().replace(".","_")} {instr_dict[i]["mask"]}\n'
         declare_insn_dir += f'DECLARE_INSN({i.replace(".","_")}, MATCH_{i.upper().replace(".","_")}, MASK_{i.upper().replace(".","_")})\n'
+        spike_make += f'{i.replace(".","_")} \ \n'
 
         if(len(instr_dict[i]['variable_fields']) == 4 ):
             insn_str += f' {{ "{i}", 0, INSN_CLASS_I, {reg_files_r4_str} ,MATCH_{i.upper().replace(".","_")}, MASK_{i.upper().replace(".","_")},match_opcode, 0}}, \n'
+            spike_declare += f'DEFINE_R3TYPE({i.replace(".","_")})\n'
+
         else :
             insn_str += f' {{ "{i}", 0, INSN_CLASS_I, {reg_files_r2_str} ,MATCH_{i.upper().replace(".","_")}, MASK_{i.upper().replace(".","_")},match_opcode, 0}}, \n'
-
+            spike_declare += f'DEFINE_RTYPE({i.replace(".","_")})\n'
 
     enc_file = open('encoding.out.h','w')
-    enc_file.write(f'''{mask_match_str}
+    enc_file.write(f'''
+    //INSN
+    {mask_match_str}
     #ifdef DECLARE_INSN
     {declare_insn_dir}#endif
+
     ''')
     enc_file.close()
+
+    enc_file_spike= open('spike_encoding','w')
+    enc_file_spike.write(f'''
+    //SPIKE 
+    {spike_declare}    
+    //MAKE
+    {spike_make}
+    ''')
+    enc_file_spike.close()
     
     enc_file2 = open('riscv-opc.out.c','w')
     enc_file2.write(f'''{insn_str}''')
