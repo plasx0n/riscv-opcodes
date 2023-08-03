@@ -1,24 +1,62 @@
 # 1 instru => 1 fonctionalitée ? ou merge des instrus/type de vectorisation SIMD
 #sign|max|sign ect .. ( cf tab des intrus)
 #ect.. 
-#
+
 # d = max( max(a,b) , c ) accumax
-# d = (a+b+c) concadd ou accuPP 
+# d = (a+b+c) accuPP 
 # d = (a-b+c) accuMP
 # d = (a + b >> c) add + logical left shift amnt 
 # d = max( (a+b) , (c-b) ) MaxPM /mmax
 
-tb.subsat   rd rs1 rs2 31..25=2  14..12=0 6..0=0x5b
-tb.max      rd rs1 rs2 31..25=2  14..12=1 6..0=0x5b
-tb.scale    rd rs1 rs2 31..25=2  14..12=2 6..0=0x5b
-tb.addsat   rd rs1 rs2 31..25=2  14..12=4 6..0=0x5b
-tb.vmax     rd rs1 rs2 31..25=2  14..12=5 6..0=0x5b
-tb.vmin     rd rs1 rs2 31..25=2  14..12=6 6..0=0x5b
-tb.vsrls    rd rs1 rs2 31..25=2  14..12=7 6..0=0x5b
+# 3 + 2 regs 
+# d = max((add(a,b),sub(c,b)))  
+# d = blendv( a ,b ,c )
+# d = add(a ,add(b,c) )
+# d = add(a ,sub(b,c) )
+    
+# c = div2(add_i8(a,b)) add shift droit 
+# c = div2(sub_i8(a,b)) sub shift droit 
+# c = sat63(a)
+# c = subi8(a,b) 
+# c = shuffle(a,b)
+# c = vsubs(a,b)
+# c = vadds(a,b)
+# c = vsrls(a,b)
+# c = div34(a)
 
-# 3Regs
-tb3.accumax   rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x5b
-tb3.accupp    rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x5b
-tb3.accump    rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x5b
-tb3.addllsa   rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x5b
-tb3.maxpm     rd rs1 rs2 rs3 26..25=3 14..12=4 6..0=0x5b
+# ?? int8_t  ?
+tb.subsat   rd rs1 rs2 31..25=2  14..12=0 6..0=0x5b
+tb.addsat   rd rs1 rs2 31..25=2  14..12=1 6..0=0x5b
+
+# turbo simple 2 R  
+    # avec et sans vecto 
+tb.max          rd rs1 rs2 31..25=2  14..12=2 6..0=0x5b
+tb.vmax         rd rs1 rs2 31..25=2  14..12=3 6..0=0x5b
+tb.scale        rd rs1 rs2 31..25=2  14..12=4 6..0=0x5b
+tb.vsrls        rd rs1 rs2 31..25=2  14..12=5 6..0=0x5b
+tb.div2add      rd rs1 rs2 31..25=2  14..12=6 6..0=0x5b
+tb.div2sub      rd rs1 rs2 31..25=2  14..12=7 6..0=0x5b
+
+tb.sat63        rd rs1 rs2 31..25=3  14..12=0 6..0=0x5b
+tb.vsubs        rd rs1 rs2 31..25=3  14..12=1 6..0=0x5b
+tb.vadds        rd rs1 rs2 31..25=3  14..12=2 6..0=0x5b
+tb.div34        rd rs1 rs2 31..25=3  14..12=3 6..0=0x5b
+tb.shuffle      rd rs1 rs2 31..25=3  14..12=4 6..0=0x5b
+
+# 3Regs turbo simple 3r
+tb3.accumax     rd rs1 rs2 rs3 26..25=4 14..12=0 6..0=0x5b
+tb3.accupp      rd rs1 rs2 rs3 26..25=4 14..12=1 6..0=0x5b
+tb3.accump      rd rs1 rs2 rs3 26..25=4 14..12=2 6..0=0x5b
+tb3.addllsa     rd rs1 rs2 rs3 26..25=4 14..12=3 6..0=0x5b
+tb3.maxpm       rd rs1 rs2 rs3 26..25=4 14..12=4 6..0=0x5b
+
+# 3 regs turbo intra 
+tb3.maxaddsat   rd rs1 rs2 rs3 26..25=4 14..12=5 6..0=0x5b
+tb3.blendv      rd rs1 rs2 rs3 26..25=4 14..12=6 6..0=0x5b
+tb3.concaddadd  rd rs1 rs2 rs3 26..25=4 14..12=7 6..0=0x5b
+tb3.concaddsub  rd rs1 rs2 rs3 26..25=4 14..12=7 6..0=0x5b
+
+
+
+#remplacé par saturate 
+#tb.vmin     rd rs1 rs2 31..25=2  14..12=6 6..0=0x5b
