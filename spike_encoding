@@ -1,17 +1,29 @@
 
     //SPIKE 
-DEFINE_RTYPE(tb_subsat)
-DEFINE_RTYPE(tb_max)
-DEFINE_RTYPE(tb_scale)
+    DEFINE_RTYPE(tb_subsat)
 DEFINE_RTYPE(tb_addsat)
+DEFINE_RTYPE(tb_max)
 DEFINE_RTYPE(tb_vmax)
-DEFINE_RTYPE(tb_vmin)
+DEFINE_RTYPE(tb_scale)
 DEFINE_RTYPE(tb_vsrls)
+DEFINE_RTYPE(tb_div2add)
+DEFINE_RTYPE(tb_div2sub)
+DEFINE_RTYPE(tb_sat63)
+DEFINE_RTYPE(tb_vsubs)
+DEFINE_RTYPE(tb_vadds)
+DEFINE_RTYPE(tb_div34)
+DEFINE_RTYPE(tb_shuffle)
 DEFINE_R3TYPE(tb3_accumax)
 DEFINE_R3TYPE(tb3_accupp)
 DEFINE_R3TYPE(tb3_accump)
 DEFINE_R3TYPE(tb3_addllsa)
 DEFINE_R3TYPE(tb3_maxpm)
+DEFINE_R3TYPE(tb3_maxaddsub)
+DEFINE_R3TYPE(tb3_blendv)
+DEFINE_R3TYPE(tb3_concaddadd)
+DEFINE_R3TYPE(tb3_concaddsub)
+DEFINE_R3TYPE(tb3_addsrla)
+DEFINE_R3TYPE(tb3_subsrla)
 DEFINE_RTYPE(pl_f)
 DEFINE_RTYPE(pl_r)
 DEFINE_RTYPE(pl_addsat)
@@ -64,17 +76,29 @@ DEFINE_R3TYPE(ld3_readvn)
     
     //MAKE
     tb_subsat \ 
-tb_max \ 
-tb_scale \ 
 tb_addsat \ 
+tb_max \ 
 tb_vmax \ 
-tb_vmin \ 
+tb_scale \ 
 tb_vsrls \ 
+tb_div2add \ 
+tb_div2sub \ 
+tb_sat63 \ 
+tb_vsubs \ 
+tb_vadds \ 
+tb_div34 \ 
+tb_shuffle \ 
 tb3_accumax \ 
 tb3_accupp \ 
 tb3_accump \ 
 tb3_addllsa \ 
 tb3_maxpm \ 
+tb3_maxaddsub \ 
+tb3_blendv \ 
+tb3_concaddadd \ 
+tb3_concaddsub \ 
+tb3_addsrla \ 
+tb3_subsrla \ 
 pl_f \ 
 pl_r \ 
 pl_addsat \ 
