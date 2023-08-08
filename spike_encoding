@@ -13,6 +13,8 @@ DEFINE_RTYPE(tb_vsubs)
 DEFINE_RTYPE(tb_vadds)
 DEFINE_RTYPE(tb_div34)
 DEFINE_RTYPE(tb_shuffle)
+DEFINE_RTYPE(tb_vsubsat)
+DEFINE_RTYPE(tb_vaddscale)
 DEFINE_R3TYPE(tb3_accumax)
 DEFINE_R3TYPE(tb3_accupp)
 DEFINE_R3TYPE(tb3_accump)
@@ -88,6 +90,8 @@ tb_vsubs \
 tb_vadds \ 
 tb_div34 \ 
 tb_shuffle \ 
+tb_vsubsat \ 
+tb_vaddscale \ 
 tb3_accumax \ 
 tb3_accupp \ 
 tb3_accump \ 

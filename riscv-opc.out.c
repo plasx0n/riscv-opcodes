@@ -11,6 +11,8 @@
  { "tb.vadds", 0, INSN_CLASS_I, "d,s,t" ,MATCH_TB_VADDS, MASK_TB_VADDS,match_opcode, 0}, 
  { "tb.div34", 0, INSN_CLASS_I, "d,s,t" ,MATCH_TB_DIV34, MASK_TB_DIV34,match_opcode, 0}, 
  { "tb.shuffle", 0, INSN_CLASS_I, "d,s,t" ,MATCH_TB_SHUFFLE, MASK_TB_SHUFFLE,match_opcode, 0}, 
+ { "tb.vsubsat", 0, INSN_CLASS_I, "d,s,t" ,MATCH_TB_VSUBSAT, MASK_TB_VSUBSAT,match_opcode, 0}, 
+ { "tb.vaddscale", 0, INSN_CLASS_I, "d,s,t" ,MATCH_TB_VADDSCALE, MASK_TB_VADDSCALE,match_opcode, 0}, 
  { "tb3.accumax", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_TB3_ACCUMAX, MASK_TB3_ACCUMAX,match_opcode, 0}, 
  { "tb3.accupp", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_TB3_ACCUPP, MASK_TB3_ACCUPP,match_opcode, 0}, 
  { "tb3.accump", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_TB3_ACCUMP, MASK_TB3_ACCUMP,match_opcode, 0}, 
