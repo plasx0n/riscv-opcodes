@@ -54,9 +54,13 @@ DEFINE_RTYPE(ldn_add32s_sat64)
 DEFINE_RTYPE(ldn_sub32s_sat64)
 DEFINE_RTYPE(ldn_vidxmincomp)
 DEFINE_RTYPE(ldn_vidxminupdate)
-DEFINE_R3TYPE(ldn_maxsub)
-DEFINE_R3TYPE(ldn_copyxorvecto)
-DEFINE_R3TYPE(ldn_readVn)
+DEFINE_RTYPE(ldn_extract)
+DEFINE_R3TYPE(ldn3_maxsub)
+DEFINE_R3TYPE(ldn3_copyxorvecto)
+DEFINE_R3TYPE(ldn3_readVn)
+DEFINE_R3TYPE(ldn3_addsatmin)
+DEFINE_R3TYPE(ldn3_shift3)
+DEFINE_R3TYPE(ldn3_vidxcompv3)
 DEFINE_RTYPE(ld_sign)
 DEFINE_RTYPE(ld_abs)
 DEFINE_RTYPE(ld_max)
@@ -131,9 +135,13 @@ ldn_add32s_sat64 \
 ldn_sub32s_sat64 \ 
 ldn_vidxmincomp \ 
 ldn_vidxminupdate \ 
-ldn_maxsub \ 
-ldn_copyxorvecto \ 
-ldn_readVn \ 
+ldn_extract \ 
+ldn3_maxsub \ 
+ldn3_copyxorvecto \ 
+ldn3_readVn \ 
+ldn3_addsatmin \ 
+ldn3_shift3 \ 
+ldn3_vidxcompv3 \ 
 ld_sign \ 
 ld_abs \ 
 ld_max \ 
