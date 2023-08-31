@@ -20,7 +20,7 @@ ld.xorb                 rd rs1 rs2 31..25=0  14..12=7 6..0=0x0b
 # 3Regs INTER/SCALAIRE
 ld3.sign3                rd rs1 rs2 rs3 26..25=3 14..12=0 6..0=0x0b
 ld3.minmax               rd rs1 rs2 rs3 26..25=3 14..12=1 6..0=0x0b
-ld3.Rsing_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
+ld3.rsign_nmess          rd rs1 rs2 rs3 26..25=3 14..12=2 6..0=0x0b
 ld3.min_sorting          rd rs1 rs2 rs3 26..25=3 14..12=3 6..0=0x0b
 
 # 3Regs INTRA

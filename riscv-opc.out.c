@@ -44,7 +44,6 @@
  { "pl3.idx_min_comp", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_PL3_IDX_MIN_COMP, MASK_PL3_IDX_MIN_COMP,match_opcode, 0}, 
  { "pl3.sc_update", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_PL3_SC_UPDATE, MASK_PL3_SC_UPDATE,match_opcode, 0}, 
  { "pl3.findminpos", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_PL3_FINDMINPOS, MASK_PL3_FINDMINPOS,match_opcode, 0}, 
- 
  { "ldn.add32u_sat64", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LDN_ADD32U_SAT64, MASK_LDN_ADD32U_SAT64,match_opcode, 0}, 
  { "ldn.vidxminupdate2", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LDN_VIDXMINUPDATE2, MASK_LDN_VIDXMINUPDATE2,match_opcode, 0}, 
  { "ldn.min", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LDN_MIN, MASK_LDN_MIN,match_opcode, 0}, 
@@ -60,7 +59,6 @@
  { "ldn3.addsatmin", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LDN3_ADDSATMIN, MASK_LDN3_ADDSATMIN,match_opcode, 0}, 
  { "ldn3.shift3", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LDN3_SHIFT3, MASK_LDN3_SHIFT3,match_opcode, 0}, 
  { "ldn3.vidxcompv3", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LDN3_VIDXCOMPV3, MASK_LDN3_VIDXCOMPV3,match_opcode, 0}, 
-
  { "ld.sign", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LD_SIGN, MASK_LD_SIGN,match_opcode, 0}, 
  { "ld.abs", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LD_ABS, MASK_LD_ABS,match_opcode, 0}, 
  { "ld.max", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LD_MAX, MASK_LD_MAX,match_opcode, 0}, 
@@ -74,7 +72,7 @@
  { "ld.xorb", 0, INSN_CLASS_I, "d,s,t" ,MATCH_LD_XORB, MASK_LD_XORB,match_opcode, 0}, 
  { "ld3.sign3", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_SIGN3, MASK_LD3_SIGN3,match_opcode, 0}, 
  { "ld3.minmax", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_MINMAX, MASK_LD3_MINMAX,match_opcode, 0}, 
- { "ld3.Rsing_nmess", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_RSING_NMESS, MASK_LD3_RSING_NMESS,match_opcode, 0}, 
+ { "ld3.rsign_nmess", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_RSIGN_NMESS, MASK_LD3_RSIGN_NMESS,match_opcode, 0}, 
  { "ld3.min_sorting", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_MIN_SORTING, MASK_LD3_MIN_SORTING,match_opcode, 0}, 
  { "ld3.maxsub", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_MAXSUB, MASK_LD3_MAXSUB,match_opcode, 0}, 
  { "ld3.copyxorvecto", 0, INSN_CLASS_I, "d,s,t,r" ,MATCH_LD3_COPYXORVECTO, MASK_LD3_COPYXORVECTO,match_opcode, 0}, 

@@ -74,7 +74,7 @@ DEFINE_RTYPE(ld_storeu)
 DEFINE_RTYPE(ld_xorb)
 DEFINE_R3TYPE(ld3_sign3)
 DEFINE_R3TYPE(ld3_minmax)
-DEFINE_R3TYPE(ld3_Rsing_nmess)
+DEFINE_R3TYPE(ld3_rsign_nmess)
 DEFINE_R3TYPE(ld3_min_sorting)
 DEFINE_R3TYPE(ld3_maxsub)
 DEFINE_R3TYPE(ld3_copyxorvecto)
@@ -155,7 +155,7 @@ ld_storeu \
 ld_xorb \ 
 ld3_sign3 \ 
 ld3_minmax \ 
-ld3_Rsing_nmess \ 
+ld3_rsign_nmess \ 
 ld3_min_sorting \ 
 ld3_maxsub \ 
 ld3_copyxorvecto \ 
