@@ -22,8 +22,8 @@ custom:
 .PHONY : custom_full
 custom_full:
 	@./parse.py -custom 'rv_polar' 'rv_ldpc' 'rv_ldpcnb' 'rv_turbo'
-	riscv64-unknown-elf-gcc insn_lib_test.c
-	rm a.out
+	# riscv64-unknown-elf-gcc insn_lib_test.c
+	# rm a.out
 
 .PHONY : inst.chisel
 inst.chisel:
@@ -47,7 +47,7 @@ inst.rs:
 
 .PHONY : clean
 clean:
-	rm -f inst* priv-instr-table.tex encoding.out.h riscv-opc.out.c
+	rm -f inst* priv-instr-table.tex encoding.out.h riscv-opc.out.c insn_lib_test.c spike_encoding
 
 .PHONY : install
 install: everything
