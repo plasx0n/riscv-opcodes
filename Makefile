@@ -22,6 +22,8 @@ custom:
 .PHONY : custom_full
 custom_full:
 	@./parse.py -custom 'rv_polar' 'rv_ldpc' 'rv_ldpcnb' 'rv_turbo'
+	riscv64-unknown-elf-gcc insn_lib_test.c
+	rm a.out
 
 .PHONY : inst.chisel
 inst.chisel:

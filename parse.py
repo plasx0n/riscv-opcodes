@@ -876,6 +876,38 @@ def make_c_custom(instr_dict):
     ''')
     enc_file.close()
 
+# 2 way file 
+# start with the custom instruction declaration
+    testFile = open("insn_lib_test.c",'w')
+    for i in instr_dict:
+        insn = f'{i.replace(".","_")}'
+        if(len(instr_dict[i]['variable_fields']) == 4 ):
+            testFile.write(f'''#define call_{insn}(rd,rs1,rs2,rs3) asm volatile("{i} %0,%1,%2,%3"\
+: "=r" (rd)\
+: "r" (rs1), "r" (rs2),"r"(rs3));
+\n''')
+        else:
+            testFile.write(f'''#define call_{insn}(rd,rs1,rs2) asm volatile("{i} %0,%1,%2"\
+: "=r" (rd)\
+: "r" (rs1), "r" (rs2));
+\n''')
+
+# start with the custom instruction declaration
+# explicit main call
+
+    testFile.write(f'''int main(int argc, char const *argv[])''' '{' '\n')
+    testFile.write(f'''int rd,rs1,rs2,rs3=0; ''' '\n')
+    for i in instr_dict:
+        insn = f'{i.replace(".","_")}'
+        if(len(instr_dict[i]['variable_fields']) == 4 ):
+            testFile.write(f'''call_{insn}(rd,rs1,rs2,rs3);\n''')
+        else:
+            testFile.write(f'''call_{insn}(rd,rs1,rs2);\n''')
+    testFile.write('}')
+    testFile.close()
+
+
+
     enc_file_spike= open('spike_encoding','w')
     enc_file_spike.write(f'''
     //SPIKE 
@@ -972,12 +1004,12 @@ if __name__ == "__main__":
         yaml.dump(instr_dict, outfile, default_flow_style=False)
     instr_dict = collections.OrderedDict(sorted(instr_dict.items()))
 
-    if '-c' in sys.argv[1:]:
-        instr_dict_c = create_inst_dict(extensions, False, 
-                include_pseudo_ops=['pause', 'prefetch_r', 'prefetch_w', 'prefetch_i'])
-        instr_dict_c = collections.OrderedDict(sorted(instr_dict_c.items()))
-        make_c(instr_dict_c)
-        logging.info('encoding.out.h generated successfully')
+    # if '-c' in sys.argv[1:]:
+    #     instr_dict_c = create_inst_dict(extensions, False, 
+    #             include_pseudo_ops=['pause', 'prefetch_r', 'prefetch_w', 'prefetch_i'])
+    #     instr_dict_c = collections.OrderedDict(sorted(instr_dict_c.items()))
+    #     make_c(instr_dict_c)
+    #     logging.info('encoding.out.h generated successfully')
 
     if '-custom' in sys.argv[1:]:
         instr_dict_c = create_inst_dict(extensions, False, 
